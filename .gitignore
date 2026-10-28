@@ -1,0 +1,13 @@
+# Your documents, your index, your answers — never the repository's business
+data/
+.env
+secrets.env
+
+# Build and runtime litter
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+
+# runtime artifacts
+.progress

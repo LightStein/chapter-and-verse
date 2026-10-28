@@ -1,0 +1,2 @@
+anthropic>=1.12
+pymupdf>=1.24

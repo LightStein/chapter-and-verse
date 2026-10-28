@@ -1,0 +1,12 @@
+{
+ "_comment": "Which Telegram chats this bot serves. chatId is the NUMERIC group id (negative; a supergroup starts -100). Send /chatid in the group to get it. staging=true queues uploaded files until your next text message, so several documents index as one batch.",
+ "projects": [
+  {
+   "name": "standards",
+   "chatId": -1000000000000,
+   "socket": "/data/run/bridge.sock",
+   "staging": true,
+   "upload": { "container": "/data/uploads", "host": "/data/uploads" }
+  }
+ ]
+}

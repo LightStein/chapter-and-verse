@@ -1,0 +1,19 @@
+# Copy .env.example to .env, fill in three values, then: docker compose up -d
+services:
+  chapter-and-verse:
+    build: .
+    container_name: chapter-and-verse
+    env_file: .env
+    environment:
+      # Which language pack drives messages, stemming and clause patterns.
+      # See engine/locales/ — ru and en ship; add your own by copying one.
+      - CV_LOCALE=${CV_LOCALE:-ru}
+      - ASK_API_MODEL=${ASK_API_MODEL:-claude-opus-5-5}
+      - REGISTRY_PATH=/app/gateway/registry.json
+    volumes:
+      # Everything that is yours lives here: source documents, the built
+      # index, the answer log. Back up corpus/ — it is the only thing that
+      # cannot be rebuilt.
+      - ./data:/data
+      - ./gateway/registry.json:/app/gateway/registry.json:ro
+    restart: unless-stopped
